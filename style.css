@@ -26,10 +26,12 @@
 body {
   width: 100vw;
   font-family: var(--ff-primary);
+  overflow: hidden;
 }
 /* contains the left and right columns */
 main {
   display: flex;
+  justify-content: space-between;
   position: relative;
   width: 100%;
 }
@@ -39,12 +41,13 @@ main {
 }
 /* contains the form */
 .col-right {
-  padding: 14em 20em;
+  padding: 14em 8em;
+  width: 50vw;
 }
 
 /* form */
 form {
-  width: 20vw;
+  width: 100%;
   position: relative;
   & input {
     margin-top: 0.4rem;
@@ -70,6 +73,9 @@ button {
   outline: 0;
   padding: 0 10px;
   font-size: 18px;
+}
+label {
+  font-weight: 600;
 }
 
 /* confirm button of the form */
@@ -138,7 +144,10 @@ aside {
   grid-area: front;
 }
 .card-number {
-  font-size: 37px;
+  font-size: 2.25rem;
+}
+.output-cardName {
+  font-size: 1.125rem;
 }
 .cardholder {
   display: flex;
@@ -161,7 +170,7 @@ aside {
   position: absolute;
   top: 45%;
   left: 80%;
-  font-size: 20px;
+  font-size: 1.125rem;
 }
 
 /* error message styling */
@@ -183,11 +192,11 @@ User will be taken here when they click 'confirm' on the form
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 20vw;
+  width: 100%;
   position: relative;
   & img {
     margin-bottom: 30px;
-    width: 60px;
+    width: 80px;
   }
   & h1 {
     margin-bottom: 20px;
@@ -218,10 +227,9 @@ User will be taken here when they click 'confirm' on the form
       }
     }
     & .col-right {
-      padding: 0;
       width: 100vw;
       height: auto;
-      padding: 60px 20px 40px;
+      padding: 5rem 1.25rem 2rem;
       & form {
         width: 100%;
         & input,
@@ -280,15 +288,23 @@ User will be taken here when they click 'confirm' on the form
       z-index: 102;
       width: 300px;
       height: 165px;
-      padding: 20px 15px;
+      padding: 1rem;
       & .img-wrap img {
         width: 60px;
       }
       & .card-number {
-        font-size: 30px;
+        font-size: 1.65rem;
       }
+      & #output-cardName {
+        font-size: 0.8rem;
+        margin-top: 0.25rem;
+      }
+
       & .cardholder p {
         font-size: 1rem;
+      }
+      & #output-exp-date {
+        margin-top: 0.25rem;
       }
     }
     & .aside-down {
@@ -300,6 +316,7 @@ User will be taken here when they click 'confirm' on the form
       & .cvc {
         top: 43%;
         left: 78%;
+        font-size: 1rem;
       }
     }
   }
